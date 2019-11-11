@@ -10,6 +10,7 @@ import javax.naming.InitialContext;
 import javax.xml.rpc.ServiceException;
 
 import customPojo.Spedid_RMN;
+import customPojo.Spedid_idCollo;
 import customPojo.trackingPojo.Tracking_SpedID;
 
 /**
@@ -54,4 +55,17 @@ public interface BrtRequestRemote extends Serializable{
 	 */
 	public Tracking_SpedID GetTrackingbySpedID(String LINGUA_ISO639_ALPHA2,String SPEDIZIONE_ANNO,String SPEDIZIONE_BRT_ID) throws ServiceException, RemoteException;
 
+	
+	/**
+	 * 
+	 * @param CLIENTE_ID
+	 * @param IDCollo
+	 * @return
+	 * @throws ServiceException
+	 * @throws RemoteException
+	 */
+	public Spedid_idCollo GetSpedIDbyIdCollo(BigDecimal CLIENTE_ID,String IDCollo) throws ServiceException, RemoteException;
+	
+	
+	
 }
