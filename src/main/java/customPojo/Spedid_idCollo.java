@@ -22,8 +22,8 @@ public class Spedid_idCollo implements Serializable {
 		public long getiDSpedizione() {
 			return IDSpedizione;
 		}
-		public void setiDSpedizione(long iDSpedizione) {
-			this.IDSpedizione = iDSpedizione;
+		public void setIDSpedizione(long IDSpedizione) {
+			this.IDSpedizione = IDSpedizione;
 		}
 		public int getVersione() {
 			return versione;
