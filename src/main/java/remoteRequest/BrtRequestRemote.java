@@ -9,7 +9,7 @@ import javax.ejb.Remote;
 import javax.naming.InitialContext;
 import javax.xml.rpc.ServiceException;
 
-import customPojo.Spedid_RMN;
+import customPojo.ResultSpedID;
 import customPojo.Spedid_idCollo;
 import customPojo.trackingPojo.Tracking_SpedID;
 
@@ -36,11 +36,11 @@ public interface BrtRequestRemote extends Serializable{
 	 * 
 	 * @param CLIENTE_ID id cliente
 	 * @param RIFERIMENTO_MITTENTE_NUMERICO Riferimento numerico spedizione
-	 * @return Spedid_RMN pojo 
+	 * @return Risultato custompojo 
 	 * @throws ServiceException exception
 	 * @throws RemoteException remote exception
 	 */
-	public Spedid_RMN GetSpedIDbyRMN(BigDecimal CLIENTE_ID,BigDecimal RIFERIMENTO_MITTENTE_NUMERICO)throws ServiceException, RemoteException;
+	public ResultSpedID GetSpedIDbyRMN(BigDecimal CLIENTE_ID,BigDecimal RIFERIMENTO_MITTENTE_NUMERICO)throws ServiceException, RemoteException;
 	
 	
 	/**
@@ -86,4 +86,19 @@ public interface BrtRequestRemote extends Serializable{
 	 * @throws RemoteException BRTError
 	 */
 	public String GetDescrizioneEsito (String LINGUA_ISO639_ALPHA2,int codiceEsito) throws ServiceException, RemoteException;
+	
+	
+	/**
+	 * 
+	 * @param CLIENTE_ID cliente
+	 * @param RIFERIMENTO_MITTENTE_ALFABETICO Riferimento alfabetico spedizione
+	 * @return Risultato custompojo 
+	 * @throws ServiceException exception
+	 * @throws RemoteException BRTError
+	 */
+	public ResultSpedID GetSpedIDbyRMA(BigDecimal CLIENTE_ID,String RIFERIMENTO_MITTENTE_ALFABETICO) throws ServiceException, RemoteException;
+	
+	
+	
+	
 }

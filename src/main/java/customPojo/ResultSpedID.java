@@ -2,7 +2,7 @@ package customPojo;
 
 import java.io.Serializable;
 
-public class Spedid_RMN implements Serializable{
+public class ResultSpedID implements Serializable{
 	
 	int esito;
 	long IDspedizione;
