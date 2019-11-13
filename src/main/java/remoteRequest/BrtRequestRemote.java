@@ -34,35 +34,34 @@ public interface BrtRequestRemote extends Serializable{
 	
 	/**
 	 * 
-	 * @param CLIENTE_ID
-	 * @param RIFERIMENTO_MITTENTE_NUMERICO
-	 * @return Spedid_RMN
-	 * @throws ServiceException
-	 * @throws RemoteException
+	 * @param CLIENTE_ID id cliente
+	 * @param RIFERIMENTO_MITTENTE_NUMERICO Riferimento numerico spedizione
+	 * @return Spedid_RMN pojo 
+	 * @throws ServiceException exception
+	 * @throws RemoteException remote exception
 	 */
-	
 	public Spedid_RMN GetSpedIDbyRMN(BigDecimal CLIENTE_ID,BigDecimal RIFERIMENTO_MITTENTE_NUMERICO)throws ServiceException, RemoteException;
 	
 	
 	/**
 	 * 
 	 * @param LINGUA_ISO639_ALPHA2 (IT,EN,ecc...)
-	 * @param SPEDIZIONE_ANNO
-	 * @param SPEDIZIONE_BRT_ID
-	 * @return Tracking_SpedID
-	 * @throws ServiceException
-	 * @throws RemoteException
+	 * @param SPEDIZIONE_ANNO anno di spedizione
+	 * @param SPEDIZIONE_BRT_ID id bartolini
+	 * @return Tracking_SpedID id tracking
+	 * @throws ServiceException exception
+	 * @throws RemoteException remote exception
 	 */
 	public Tracking_SpedID GetTrackingbySpedID(String LINGUA_ISO639_ALPHA2,String SPEDIZIONE_ANNO,String SPEDIZIONE_BRT_ID) throws ServiceException, RemoteException;
 
 	
 	/**
 	 * 
-	 * @param CLIENTE_ID
-	 * @param IDCollo
-	 * @return
-	 * @throws ServiceException
-	 * @throws RemoteException
+	 * @param CLIENTE_ID id cliente
+	 * @param IDCollo  id collo
+	 * @return Spedid_idCollo pojo
+	 * @throws ServiceException exception
+	 * @throws RemoteException remote exception
 	 */
 	public Spedid_idCollo GetSpedIDbyIdCollo(BigDecimal CLIENTE_ID,String IDCollo) throws ServiceException, RemoteException;
 	
