@@ -45,7 +45,7 @@ public interface BrtRequestRemote extends Serializable{
 	
 	/**
 	 * 
-	 * @param LINGUA_ISO639_ALPHA2 (IT,EN,ecc...)
+	 * @param LINGUA_ISO639_ALPHA2 (it,fr,ecc...)
 	 * @param SPEDIZIONE_ANNO anno di spedizione
 	 * @param SPEDIZIONE_BRT_ID id bartolini
 	 * @return Tracking_SpedID id tracking
@@ -66,5 +66,24 @@ public interface BrtRequestRemote extends Serializable{
 	public Spedid_idCollo GetSpedIDbyIdCollo(BigDecimal CLIENTE_ID,String IDCollo) throws ServiceException, RemoteException;
 	
 	
+	/**
+	 * 
+	 * @param LINGUA_ISO639_ALPHA2 (it,fr,ecc...)
+	 * @param code codice ID Evento Spedizione (AVV,AV2,G09,ecc...)
+	 * @return String Descrizione Evento
+	 * @throws ServiceException Exception
+	 * @throws RemoteException BRTError
+	 */
 	
+	public String GetDescrizioneEvento (String LINGUA_ISO639_ALPHA2,String code) throws ServiceException, RemoteException;
+	
+	/**
+	 * 
+	 * @param LINGUA_ISO639_ALPHA2 (it,fr,ecc...)
+	 * @param codiceEsito (0,1-11,ecc...)
+	 * @return String Descrizione codice esito
+	 * @throws ServiceException Exception
+	 * @throws RemoteException BRTError
+	 */
+	public String GetDescrizioneEsito (String LINGUA_ISO639_ALPHA2,int codiceEsito) throws ServiceException, RemoteException;
 }
