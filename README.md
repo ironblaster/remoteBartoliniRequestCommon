@@ -14,8 +14,11 @@ Through interface to the RemoteBartoliniRequest war Present in my repositories
 
 # for more info read the README of RemoteBartoliniRequest
 
+
+```
 <dependency>
     <groupId>com.github.ironblaster</groupId>
     <artifactId>remoteBartoliniRequestCommon</artifactId>
     <version>{LAST-RELASE}</version>
 </dependency>
+```
