@@ -1,5 +1,6 @@
 package remoteRequest;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.rmi.RemoteException;
@@ -11,6 +12,12 @@ import javax.xml.rpc.ServiceException;
 
 import customPojo.ResultSpedID;
 import customPojo.Spedid_idCollo;
+import customPojo.shipmentPojo.chiamate.ConfirmRequest;
+import customPojo.shipmentPojo.chiamate.CreateRequest;
+import customPojo.shipmentPojo.chiamate.DeleteRequest;
+import customPojo.shipmentPojo.risposte.ConfirmResult;
+import customPojo.shipmentPojo.risposte.CreateResult;
+import customPojo.shipmentPojo.risposte.DeleteResult;
 import customPojo.trackingPojo.Tracking_SpedID;
 
 /**
@@ -30,6 +37,34 @@ import customPojo.trackingPojo.Tracking_SpedID;
 
 @Remote
 public interface BrtRequestRemote extends Serializable{
+	
+	
+	
+	
+	/**
+	 * Cancella Una spedizione creata con il metodo CreaSpedizione
+	 * @param deleteRequest
+	 * @return DeleteResult
+	 * @throws IOException
+	 */
+	public DeleteResult CancellaSpedizione(DeleteRequest deleteRequest) throws IOException;
+	
+	
+	/**
+	 * Conferma una spedizione Creata con il metodo CreaSpedizione
+	 * @param confirmRequest
+	 * @return ConfirmResult
+	 * @throws IOException
+	 */
+	public ConfirmResult ConfermaSpedizione(ConfirmRequest confirmRequest) throws IOException;
+	
+	/**
+	 * Crea una spedizione con il metodo Rest Bartolini
+	 * @param createRequest
+	 * @return CreateResult
+	 * @throws IOException
+	 */
+	public CreateResult CreaSpedizione(CreateRequest createRequest) throws IOException;
 	
 	
 	/**
